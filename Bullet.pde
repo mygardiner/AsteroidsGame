@@ -20,4 +20,12 @@ class Bullet extends Floater {
   public double getMyCenterY() {
     return myCenterY;
   }
+  public void move() {
+    myCenterX += myXspeed;
+    myCenterY += myYspeed;
+
+    if (myCenterX > width || myCenterX < 0 || myCenterY > height || myCenterY < 0) {
+      bullets.remove(this);
+    }
+  }
 }
