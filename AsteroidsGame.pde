@@ -3,8 +3,7 @@ Star[] nightSky = new Star[500];
 ArrayList<Asteroid> list = new ArrayList<Asteroid>();
 ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
-
-public void setup() {
+void setup() {
   size(500, 500);
   for (int i = 0; i < nightSky.length; i++) {
     nightSky[i] = new Star();
@@ -21,7 +20,7 @@ public void setup() {
   list.add(new Asteroid());
 }
 
-public void draw() {
+void draw() {
   background(0);
   bob.show();
   bob.move();
@@ -47,6 +46,10 @@ public void draw() {
         break;
       }
     }
+  }
+  for (int j = 0; j < bullets.size(); j++) {
+    bullets.get(j).show();
+    bullets.get(j).move();
   }
 }
 
